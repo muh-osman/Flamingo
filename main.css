@@ -997,7 +997,7 @@ main section div.item-description h4:nth-of-type(2) {
     font-weight: 500;
     margin: 0;
     transition: .2s;
-    /* background-color: #0a80fe; */
+    background-color: #0a80fe;
 }
 
 main section div.item-description h4:nth-of-type(2) {
@@ -1005,7 +1005,7 @@ main section div.item-description h4:nth-of-type(2) {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    /* background-color: red; */
+    background-color: red;
 }
 
 main section div.item-description h5 {
@@ -1014,7 +1014,7 @@ main section div.item-description h5 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* background-color: #3b5998; */
+    background-color: #3b5998;
 }
 
 main section h5 span.price {
@@ -1090,30 +1090,26 @@ main section .computers:hover .items-scroller::-webkit-scrollbar-thumb:horizonta
 }
 
 /*  */
-@media (max-width: 840px) {
+/* @media (max-width: 840px) {
     main section .items-scroller {
         grid-auto-columns: 23%;
     }
     main section div.item-description h4 {
     font-size: calc(1vw + 6px) !important;
     }
-}
+} */
 
 @media (max-width: 768px) {
     main section .items-scroller {
         grid-auto-columns: 27%;
     }
-    main section div.item-description h4 {
+    main section div.item-description h4,
+    main section h5 span.currency,
+    main section h5 span.week {
         font-size: 2.2vw !important;
     }
     main section h5 span.price {
-        font-size: calc(2vw + 6px);
-    }
-    main section h5 span.currency {
-        font-size: 1.9vw;
-    }
-    main section h5 span.week {
-        font-size: 1.9vw;
+        font-size: calc(2vw + 8px);
     }
 }
 
@@ -1121,14 +1117,13 @@ main section .computers:hover .items-scroller::-webkit-scrollbar-thumb:horizonta
     main section .items-scroller {
         grid-auto-columns: 62%;
     }
-    main section div.item-description h4 {
+    main section div.item-description h4,
+    main section h5 span.currency,
+    main section h5 span.week {
         font-size: 4vw !important;
     }
-    main section h5 span.currency {
-        font-size: calc(2vw + 2px);
-    }
-    main section h5 span.week {
-        font-size: calc(2vw + 2px);
+    main section h5 span.price {
+        font-size: calc(4vw + 16px);
     }
 }
 
@@ -1138,6 +1133,7 @@ main section .computers:hover .items-scroller::-webkit-scrollbar-thumb:horizonta
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        font-size: 5vw !important;
     }
     main section div.item-description h4:nth-of-type(2) {
     display: none;
