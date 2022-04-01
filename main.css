@@ -1071,6 +1071,10 @@ main section .computers:hover .items-scroller::-webkit-scrollbar-thumb:horizonta
 /* Start Responsive Shelves (iPad) */
 @media (max-width: 992px) {
 
+    main section .item-cards:active {
+        box-shadow: none;
+        transition: .2s;
+    }
     /* Hide scrollbar for Chrome, Safari and Opera */
     main section .items-scroller::-webkit-scrollbar {
             display: none;
