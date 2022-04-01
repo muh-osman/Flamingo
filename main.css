@@ -997,7 +997,7 @@ main section div.item-description h4:nth-of-type(2) {
     font-weight: 500;
     margin: 0;
     transition: .2s;
-    background-color: #0a80fe;
+    /* background-color: #0a80fe; */
 }
 
 main section div.item-description h4:nth-of-type(2) {
@@ -1005,7 +1005,7 @@ main section div.item-description h4:nth-of-type(2) {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    background-color: red;
+    /* background-color: red; */
 }
 
 main section div.item-description h5 {
@@ -1014,7 +1014,7 @@ main section div.item-description h5 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-color: #3b5998;
+    /* background-color: #3b5998; */
 }
 
 main section h5 span.price {
