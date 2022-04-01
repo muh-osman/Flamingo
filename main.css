@@ -997,7 +997,6 @@ main section div.item-description h4:nth-of-type(2) {
     font-weight: 500;
     margin: 0;
     transition: .2s;
-    background-color: #0a80fe;
 }
 
 main section div.item-description h4:nth-of-type(2) {
@@ -1005,7 +1004,6 @@ main section div.item-description h4:nth-of-type(2) {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    background-color: red;
 }
 
 main section div.item-description h5 {
@@ -1014,7 +1012,6 @@ main section div.item-description h5 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-color: #3b5998;
 }
 
 main section h5 span.price {
@@ -1100,14 +1097,6 @@ main section .computers:hover .items-scroller::-webkit-scrollbar-thumb:horizonta
 @media (max-width: 768px) {
     main section .items-scroller {
         grid-auto-columns: 27%;
-    }
-    main section div.item-description h4,
-    main section h5 span.currency,
-    main section h5 span.week {
-        font-size: 2.2vw !important;
-    }
-    main section h5 span.price {
-        font-size: calc(2vw + 8px);
     }
 }
 
