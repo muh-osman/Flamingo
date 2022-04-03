@@ -787,11 +787,6 @@ section nav a.rent-btn-icon svg:hover {
     section nav a.rent-btn-icon {
         display: block;
     }
-    ::-webkit-scrollbar {
-        width: 0;
-        display: none;
-    }
-
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -1219,102 +1214,90 @@ main div.how-box {
     overflow: hidden;
     position: relative;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
 }
-
-.one {
-
-}
-
-.two {
-}
-
-.three {
-}
-
 
 .how img {
-    object-fit: cover;
-    background-position: center;
     transition: .3s;
-    width: 500px;
-    /* height: 500px; */
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    width: 100%;
 }
 
-.how:hover img {
-
-    /* transform: scale(1.1); */
-    
+.one:hover img,
+.three:hover img {
+    transform: scale(1.1);
 }
 
-.how:hover .translate-img {
-    transform: translateY(-15px);
-}
-
-.translate-img:hover {
-    /* transform: translateY(-15px); */
+.two:hover {
+    transform: translateY(-12px);
+    transition: .3s;
 }
 
 .how h2 {
     position: absolute;
-    bottom: 0;
-    font-size: 27px;
+    bottom: -10px;
+    font-size: 2.6vw;
     line-height: 1.2;
 }
 
 h2 mark {
     padding: 0;
-    background-color:#f68c2f5b;
+    color: #000;
+    background-color: #fff;
 }
-
 
 .more-details-link {
+    margin: 10px 20px 10px 0;
     align-self: flex-end;
+    text-align: center;
+}
 
-    padding: 0;
-
+.more-details-link a {
+    display: block;
     padding: 13px 20px;
-    border: none;
-    border-radius: 50px;
-    background-color: #FE1251;
-    color: #fff;
     font-size: 22px;
-    font-weight: bold;
-    transition: all 0.2s;
-}
-
-.more-details-btn {
-    text-align: right;
-    padding: 0;
-    margin-right: 50px;
-
-}
-
-.more-details-btn button {
-    padding: 13px 20px;
-    border: none;
+    font-weight: 600;
     border-radius: 50px;
-    background-color: #FE1251;
     color: #fff;
-    font-size: 22px;
-    font-weight: bold;
-    transition: all 0.2s;
-
+    background-color: #fe1251;
+    transition: 0.2s;
 }
 
-.more-details-btn button:hover {
+.more-details-link a:hover {
     color: #333;
     background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.13) 0px 7px 15px, rgb(0 0 0 / 5%) 10px 10px 3px;
-
 }
 
-.more-details-btn button:active {
-    box-shadow: none;
+@media (max-width: 768px) {
+    main div.how-box {
+        flex-direction: column;
+    }
+    .one:hover img,
+    .three:hover img {
+    transform: scale(1);
+}
+.two:hover {
+    transform: translateY(0);
+    }
+    main div.how-it-works-title {
+        padding: 0;
+        align-self: center;
+    }
+    .how h2 {
+        font-size: 7vw;
+    }
+    .more-details-link {
+        align-self: center;
+        width: 100%;
+        margin: 10px 0;
+        padding: 0 20px;
+    }
+    .more-details-link a {
+        padding: 13px 0;
+        width: 100%;
+    }
 }
 
 
