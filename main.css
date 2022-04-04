@@ -38,6 +38,19 @@ body {
     --clr-box-shadow: 0px 3px 10px #00000040;
     --clr-box-shadow-hover: 0px 3px 10px #00000040;
     --clr-before-big-more: #3f3f42;
+
+    --clr-down-hr: #f1f1f1;
+    --clr-border-and-before-svg-top-brands: #434544;
+    --clr-svg-top-brands: #434544;
+    --clr-svg-top-brands-hover: #fff;
+    --clr-samsung-galaxy-svg-top-brands: #434544;
+    --clr-samsung-letter-svg-top-brands: #fff;
+    --clr-samsung-galaxy-svg-top-brands-hover: #fff;
+    --clr-samsung-letter-svg-top-brands-hover: #434544;
+    --clr-nintendo-back: #fff;
+    --clr-nintendo-back-hover: #434544;
+
+
     
     --clr-background-mob-navbar: rgba(255, 0, 69, 0.8);
     --clr-indicat-border: #fff;
@@ -46,22 +59,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-    --clr-light: #fff;
-    --clr-dark: #f1f1f1;
-    --clr-light-dark: #292929;
-
-    --foreground: var(--clr-font);
-    --background-d: var(--clr-dark);
-    --background-l: var(--clr-light);
 }
 
 .darkmode {
@@ -97,32 +94,24 @@ body {
     --clr-box-shadow-hover: 0px 0px 8px -1px #ffffff;
     --clr-before-big-more: #292929;
 
-    
+    --clr-down-hr: #fff;
+    --clr-border-and-before-svg-top-brands: #fff;
+    --clr-svg-top-brands: #fff;
+    --clr-svg-top-brands-hover: #FF0045;
+    --clr-samsung-galaxy-svg-top-brands: #fff;
+    --clr-samsung-letter-svg-top-brands: #121212;
+    --clr-samsung-galaxy-svg-top-brands-hover: #FF0045;
+    --clr-samsung-letter-svg-top-brands-hover: #fff;
+    --clr-nintendo-back: #121212;
+    --clr-nintendo-back-hover: #fff;
+
+
+
     --clr-background-mob-navbar: rgb(41, 41, 41, 0.8);
     --clr-indicat-border: #121212;
     --clr-svg-icon-in-cat-shelve-under-nav: #0a80fe;
     --clr-svg-icon-in-cat-shelve-under-nav-hover: #FF0045;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    --clr-light: #fff;
-    --clr-dark: #121212;
-    --clr-light-dark: #292929;
-
-    --foreground: var(--clr-font);
-    --background-d: var(--clr-light-dark);
-    --background-l: var(--clr-dark);
 
 }
 
@@ -884,7 +873,6 @@ section .carousel-indicators [data-bs-target] {
 /* Start Shelves section */
 main section.shelves-box {
     margin: 0;
-    height: 100%;
     width: 100%;
 }
 
@@ -1237,14 +1225,22 @@ main .how-box .two:hover {
 
 main .how h2 {
     position: absolute;
-    bottom: -10px;
+    bottom: -1px;
     font-size: 2.6vw;
     line-height: 1.2;
+    margin: 0;
+}
+
+main .how-box .one:hover h2 mark,
+main .how-box .two:hover h2 mark,
+main .how-box .three:hover h2 mark {
+    color: #000;
 }
 
 main .how h2 mark {
     padding: 0;
-    color: #000;
+    color: #333;
+    transition: .3s;
     background-color: #fff;
 }
 
@@ -1291,7 +1287,7 @@ main .how-it-works .more-details-link a:hover {
     main .how-it-works .more-details-link {
         align-self: center;
         width: 100%;
-        margin: 10px 0;
+        margin: 19px 0;
         padding: 0 20px;
     }
     main .how-it-works .more-details-link a {
@@ -1399,49 +1395,58 @@ a.item-cards-down::after {
 }
 
 
-.down-hr {
+main div hr.down-hr {
     width: 90%;
+    height: 1.5px;
     margin: auto;
-    /* background-color: #434544; */
+    background-color: var(--clr-down-hr);
+    opacity: 1;
+    border-radius: 50px;
 }
 
 
 /* Top brands section */
-section .top-brands-shelve {
-    height: 250px;
+main section.brand-section {
+    padding: 12px 12px 0;
     margin-bottom: 25px;
-    /* background-color: #f1f1f1; */
+}
+main section .top-brands-shelve {
+
 }
 
-section .top-brands-shelve h3 {
-    color: var(--bs-body-color);
+main section .top-brands-shelve h3 {
+    color: var(--clr-font);
     font-size: calc(1.3rem + 0.6vw);
     font-weight: 500;
     line-height: 1.2;
     margin: 0;
-    padding-left: 20px;
+    padding-left: 9px;
 }
 
-.top-brand {
-    background-color: #fff;
-    height: 80%;
-    margin: 0 5px;
-    width: 15%;
-    border: 1px solid #434544;
-    border-radius: 3px;
-    padding: 10px;
+.brand-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 12px;
 }
 
-section .top-brands-shelve svg {
-    width: 100%;
+.brand {
+    aspect-ratio: 1 / 1;
+}
+
+main section .top-brands-shelve svg,
+.brand a {
     height: 100%;
+    width: 100%;
 }
 
 .uniform {
-    padding: 10px 10px;
+    border: 1px solid var(--clr-border-and-before-svg-top-brands);
+    border-radius: 3px;
+    padding: 10px;
+
     position: relative;
     z-index: 1;
-    border: 1px solid #434544;
     background: none;
     overflow: hidden;
     display: flex;
@@ -1453,109 +1458,107 @@ section .top-brands-shelve svg {
     content: "";
     width: 100%;
     height: 100%;
-    margin: 0;
     background: none;
     position: absolute;
     z-index: -3;
-    box-shadow: 0px 0px 0px 100px #434544;
+    box-shadow: 0px 0px 0px 100px var(--clr-border-and-before-svg-top-brands);
     transition: .4s;
 }
 
 /* APPLE */
 .apple path {
-    fill: #434544;
-    transition: all .4s;
+    transition: .4s;
+    color: var(--clr-svg-top-brands);
 }
 
 a.apple:hover.apple path,
 .apple:hover::before {
-    fill: #fff;
+    color: var(--clr-svg-top-brands-hover);
     height: 0;
     width: 0;
 }
 
 /* SAMSUNG */
 section .top-brands-shelve .samsung svg .galaxy {
-    fill: #434544;
+    fill: var(--clr-samsung-galaxy-svg-top-brands);
     transition: .4s;
 }
 
 section .top-brands-shelve .samsung svg .letter {
-    fill: #fff;
+    fill: var(--clr-samsung-letter-svg-top-brands);
     transition: .4s;
 }
 
 a.samsung:hover.samsung .galaxy,
 a.samsung:hover::before {
-    fill: #fff;
+    fill: var(--clr-samsung-galaxy-svg-top-brands-hover);
     height: 0;
     width: 0;
 }
 
 a.samsung:hover.samsung .letter {
-    fill: #434544;
+    fill: var(--clr-samsung-letter-svg-top-brands-hover);
 }
-
 
 /* SONY */
 .sony svg path{
-    fill: #434544;
+    fill: var(--clr-svg-top-brands);
     transition: .4s;
 }
 
 a.sony:hover.sony path,
 .sony:hover::before {
-    fill: #fff;
+    fill: var(--clr-svg-top-brands-hover);
     height: 0;
     width: 0;
 }
 
 /* CANON */
 .canon svg path{
-    fill: #434544;
+    fill: var(--clr-svg-top-brands);
     transition: .4s;
 }
 
 a.canon:hover.canon path,
 .canon:hover::before {
-    fill: #fff;
+    fill: var(--clr-svg-top-brands-hover);
     height: 0;
     width: 0;
 }
 
 /* DELL */
 .dell svg path{
-    fill: #434544;
+    fill: var(--clr-svg-top-brands);
     transition: .4s;
 }
 
 a.dell:hover.dell path,
 .dell:hover::before {
-    fill: #fff;
+    fill: var(--clr-svg-top-brands-hover);
     height: 0;
     width: 0;
 }
 
 /* Nintendo */
 .nintendo svg path{
-    fill: #434544;
+    fill: var(--clr-svg-top-brands);
     transition: .4s;
 }
 
 .nintendo svg path.back{
-    fill: #fff;
+    fill: var(--clr-nintendo-back);
     transition: .4s;
 }
 
 a.nintendo:hover.nintendo path,
 .nintendo:hover::before {
-    fill: #fff;
+    fill: var(--clr-svg-top-brands-hover);
     height: 0;
     width: 0;
 }
 
 a.nintendo:hover svg path.back {
-    fill: #434544;
+    fill: var(--clr-nintendo-back-hover);
 }
 
 
