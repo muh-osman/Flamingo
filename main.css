@@ -50,11 +50,8 @@ body {
     --clr-border-and-before-svg-top-brands: #434544;
     --clr-svg-top-brands: #434544;
     --clr-svg-top-brands-hover: var(--clr-background);
-    --clr-samsung-letter-svg-top-brands: var(--clr-background);
+    --clr-samsung-letter-and-nintendo-back-svg-top-brands: var(--clr-background);
     --clr-samsung-galaxy-svg-top-brands-hover: var(--clr-background);
-    /* --clr-samsung-letter-svg-top-brands-hover: #434544; */
-    --clr-nintendo-back: var(--clr-background);
-    --clr-nintendo-back-hover: #434544;
 
 
     /* mobile phone Navbar & Category shelve under it */
@@ -112,11 +109,8 @@ body {
     --clr-border-and-before-svg-top-brands: #fff;
     --clr-svg-top-brands: #fff;
     --clr-svg-top-brands-hover: #FF0045;
-    --clr-samsung-letter-svg-top-brands: var(--clr-background);
+    --clr-samsung-letter-and-nintendo-back-svg-top-brands: var(--clr-background);
     --clr-samsung-galaxy-svg-top-brands-hover: #FF0045;
-    /* --clr-samsung-letter-svg-top-brands-hover: #fff; */
-    --clr-nintendo-back: var(--clr-background);
-    --clr-nintendo-back-hover: #fff;
 
 
     /* mobile phone Navbar & Category shelve under it */
@@ -1424,9 +1418,6 @@ main section.brand-section {
     padding: 12px 12px 0;
     margin-bottom: 25px;
 }
-main section .top-brands-shelve {
-
-}
 
 main section .top-brands-shelve h3 {
     color: var(--clr-font);
@@ -1434,27 +1425,27 @@ main section .top-brands-shelve h3 {
     font-weight: 500;
     line-height: 1.2;
     margin: 0;
-    padding-left: 9px;
+    padding: 0 0 9px 9px;
 }
 
-.brand-box {
+main section .top-brands-shelve .brand-box {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 12px;
 }
 
-.brand {
+main section div.brand {
     aspect-ratio: 1 / 1;
 }
 
 main section .top-brands-shelve svg,
-.brand a {
+main section .top-brands-shelve .brand a {
     height: 100%;
     width: 100%;
 }
 
-.uniform {
+main a.uniform {
     border: 1px solid var(--clr-border-and-before-svg-top-brands);
     border-radius: 3px;
     padding: 10px;
@@ -1468,7 +1459,7 @@ main section .top-brands-shelve svg,
     align-items: center;
 }
 
-.uniform::before {
+main a.uniform::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -1479,81 +1470,118 @@ main section .top-brands-shelve svg,
     transition: .4s;
 }
 
-/* APPLE */
-.apple path,
-.sony svg path,
-.canon svg path,
-.dell svg path,
-.nintendo svg path,
-section .top-brands-shelve .samsung svg .galaxy,
-a.samsung:hover.samsung .letter {
+/* APPLE, Sony, Canon & Dell */
+main .apple svg path,
+main .sony svg path,
+main .canon svg path,
+main .dell svg path {
     transition: .4s;
     color: var(--clr-svg-top-brands);
 }
 
-a.apple:hover.apple path,
-a.sony:hover.sony path,
-a.canon:hover.canon path,
-a.dell:hover.dell path,
-a.nintendo:hover.nintendo path {
+main a.apple:hover.apple path,
+main a.sony:hover.sony path,
+main a.canon:hover.canon path,
+main a.dell:hover.dell path {
+    transition: .4s;
     color: var(--clr-svg-top-brands-hover);
 }
 
-.apple:hover::before,
-.sony:hover::before,
-.canon:hover::before,
-.dell:hover::before,
-a.samsung:hover::before,
-.nintendo:hover::before {
-    height: 0;
+main a.apple:hover::before,
+main a.sony:hover::before,
+main a.canon:hover::before,
+main a.dell:hover::before,
+main a.samsung:hover::before,
+main a.nintendo:hover::before {
     width: 0;
+    height: 0;
 }
 
+/* Samsung & Nintendo */
 
-
-/* SAMSUNG */
-
-/* section .top-brands-shelve .samsung svg .galaxy {
+main a.samsung svg .galaxy,
+main a.samsung:hover.samsung .letter,
+main a.nintendo svg path,
+main a.nintendo:hover svg path.back {
     fill: var(--clr-svg-top-brands);
     transition: .4s;
-} */
+}
 
-section .top-brands-shelve .samsung svg .letter {
-    fill: var(--clr-samsung-letter-svg-top-brands);
+main a.samsung svg .letter,
+main a.nintendo svg path.back {
+    fill: var(--clr-samsung-letter-and-nintendo-back-svg-top-brands);
     transition: .4s;
 }
 
-a.samsung:hover.samsung .galaxy {
+main a.samsung:hover.samsung .galaxy,
+main a.nintendo:hover.nintendo path {
     fill: var(--clr-samsung-galaxy-svg-top-brands-hover);
-
-}
-
-/* a.samsung:hover.samsung .letter {
-    fill: var(--clr-samsung-letter-svg-top-brands-hover);
-} */
-
-
-
-/* Nintendo */
-
-/* .nintendo svg path{
-    fill: var(--clr-svg-top-brands);
-    transition: .4s;
-} */
-
-.nintendo svg path.back{
-    fill: var(--clr-nintendo-back);
     transition: .4s;
 }
 
-/* a.nintendo:hover.nintendo path {
-    fill: var(--clr-svg-top-brands-hover);
-} */
-
-a.nintendo:hover svg path.back {
-    fill: var(--clr-nintendo-back-hover);
+/* Responsive top brands */
+@media (max-width: 768px) {
+    main section .top-brands-shelve .brand-box {
+        flex-wrap: wrap;
+    }
+    .nin,
+    .del,
+    .can,
+    .son,
+    .sam,
+    .ap {
+        flex-basis: calc(100% / 3 - 8px);
+    }
+    
+    .nin {
+        order: 4;
+    }
+    .del {
+        order: 5;
+    }
+    .can {
+        order: 6;
+    }
+    .son {
+        order: 1;
+    }
+    .sam {
+        order: 2;
+    }
+    .ap {
+        order: 3;
+    }
 }
 
+@media (max-width: 576px) {
+    .nin,
+    .del,
+    .can,
+    .son,
+    .sam,
+    .ap {
+        flex-basis: calc(50% - 6px);
+    }
+
+    .nin {
+        order: 5;
+    }
+    .del {
+        order: 6;
+    }
+    .can {
+        order: 4;
+    }
+    .son {
+        order: 3;
+    }
+    .sam {
+        order: 1;
+    }
+    .ap {
+        order: 2;
+    }
+}
 
 /* Footer */
 table {
