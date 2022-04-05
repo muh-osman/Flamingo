@@ -53,7 +53,6 @@ body {
     --clr-samsung-letter-and-nintendo-back-svg-top-brands: var(--clr-background);
     --clr-samsung-galaxy-svg-top-brands-hover: var(--clr-background);
 
-
     /* mobile phone Navbar & Category shelve under it */
     --clr-background-mob-navbar: rgba(255, 0, 69, 0.8);
     --clr-indicat-border: var(--clr-background);
@@ -105,13 +104,12 @@ body {
     --clr-before-big-more: #292929;
 
     /* Top brands section */
-    --clr-down-hr: #fff;
+    --clr-down-hr: #FF0045;
     --clr-border-and-before-svg-top-brands: #fff;
     --clr-svg-top-brands: #fff;
     --clr-svg-top-brands-hover: #FF0045;
     --clr-samsung-letter-and-nintendo-back-svg-top-brands: var(--clr-background);
     --clr-samsung-galaxy-svg-top-brands-hover: #FF0045;
-
 
     /* mobile phone Navbar & Category shelve under it */
     --clr-background-mob-navbar: rgb(41, 41, 41, 0.8);
@@ -1405,7 +1403,7 @@ a.item-cards-down::after {
 
 main div hr.down-hr {
     width: 90%;
-    height: 1.5px;
+    height: 2px;
     margin: auto;
     background-color: var(--clr-down-hr);
     opacity: 1;
@@ -1532,7 +1530,7 @@ main a.nintendo:hover.nintendo path {
     .ap {
         flex-basis: calc(100% / 3 - 8px);
     }
-    
+
     .nin {
         order: 4;
     }
@@ -1554,6 +1552,29 @@ main a.nintendo:hover.nintendo path {
 }
 
 @media (max-width: 576px) {
+    main div hr.down-hr {
+        margin: 0;
+        width: 152px;
+        border-radius: 0 50px 50px 0;
+        position: relative;
+    }
+
+    hr.down-hr::before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        right: 2px;
+        transform-origin: top right;
+        transform: rotate(-120deg);
+        background-color: var(--clr-down-hr);
+        height: 2px;
+        width: 40px;
+    }
+
+    main section .top-brands-shelve h3 {
+        padding-bottom: 12px;
+    }
+
     .nin,
     .del,
     .can,
@@ -1582,6 +1603,7 @@ main a.nintendo:hover.nintendo path {
         order: 2;
     }
 }
+
 
 /* Footer */
 table {
