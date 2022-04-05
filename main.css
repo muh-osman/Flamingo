@@ -797,7 +797,7 @@ section nav a.rent-btn-icon svg:hover {
         border-radius: 0;
     }
     main section.shelves-box {
-        padding: 12px;
+        padding: 0 12px;
     }
     section .carousel-inner img {
         max-height: 40vw;
@@ -1576,6 +1576,7 @@ main a.nintendo:hover.nintendo path {
         background-color: var(--clr-down-hr);
         height: 2px;
         width: 40px;
+        border-bottom-right-radius: 50px;
     }
 
     main section .top-brands-shelve h3 {
