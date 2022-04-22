@@ -983,27 +983,27 @@ main section .item-cards:active {
     transition: .2s;
 }
 
-main section .item-cards:hover div.item-description h4 {
+main section .items-scroller .item-cards:hover div.item-description h4 {
     color: var(--clr-font-hover);
     transition: .2s;
 }
 
-main section div.item-description h4:nth-of-type(1),
-main section div.item-description h4:nth-of-type(2) {
+main section .items-scroller div.item-description h4:nth-of-type(1),
+main section .items-scroller div.item-description h4:nth-of-type(2) {
     font-size: calc(1vw + 5px);
     font-weight: 500;
     margin: 0;
     transition: .2s;
 }
 
-main section div.item-description h4:nth-of-type(2) {
+main section .items-scroller div.item-description h4:nth-of-type(2) {
     flex: 2;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
-main section div.item-description h5 {
+main section .items-scroller div.item-description h5 {
     margin: 0;
     flex: 1;
     display: flex;
@@ -1011,20 +1011,20 @@ main section div.item-description h5 {
     align-items: flex-end;
 }
 
-main section h5 span.price {
+main section .items-scroller h5 span.price {
     color: var(--clr-black-white);
     font-weight: 700;
     font-size: calc(1vw + 10px);
 }
 
-main section h5 span.currency {
+main section .items-scroller h5 span.currency {
     color: var(--clr-black-white);
     font-weight: 700;
     font-size: 14px;
     padding-left: 3px;
 }
 
-main section h5 span.week {
+main section .items-scroller h5 span.week {
     color: var(--clr-font);
     font-weight: 500;
     font-size: 14px;   
@@ -1037,9 +1037,11 @@ main section .items-scroller::-webkit-scrollbar:horizontal {
 
 /* Scrollbar Handle */
 main section .items-scroller::-webkit-scrollbar-thumb:horizontal,
+/* The New Section (On rise, Most popular & Added Recently) */
 main section .shelves-down .items-down-scroller::-webkit-scrollbar-thumb:horizontal,
 /* Scrollbar Track */
 main section .items-scroller::-webkit-scrollbar-track:horizontal,
+/* The New Section (On rise, Most popular & Added Recently) */
 main section .shelves-down .items-down-scroller::-webkit-scrollbar-track:horizontal {
     background-color: transparent; 
 }
@@ -1075,12 +1077,12 @@ main section .shelves-down:hover .items-down-scroller::-webkit-scrollbar-thumb:h
     main section .items-scroller {
         grid-auto-columns: 27%;
     }
-    main section div.item-description h4,
-    main section h5 span.currency,
-    main section h5 span.week {
+    main section .items-scroller div.item-description h4,
+    main section .items-scroller h5 span.currency,
+    main section .items-scroller h5 span.week {
         font-size: 2.2vw !important;
     }
-    main section h5 span.price {
+    main section .items-scroller h5 span.price {
         font-size: calc(2vw + 8px);
     }
 }
@@ -1098,12 +1100,12 @@ main section .shelves-down:hover .items-down-scroller::-webkit-scrollbar-thumb:h
     main section .items-scroller {
         grid-auto-columns: 62%;
     }
-    main section div.item-description h4,
-    main section h5 span.currency,
-    main section h5 span.week {
+    main section .items-scroller div.item-description h4,
+    main section .items-scroller h5 span.currency,
+    main section .items-scroller h5 span.week {
         font-size: 4vw !important;
     }
-    main section h5 span.price {
+    main section .items-scroller h5 span.price {
         font-size: calc(4vw + 16px);
     }
     main section.shelves-box {
@@ -1121,14 +1123,14 @@ main section .shelves-down:hover .items-down-scroller::-webkit-scrollbar-thumb:h
 }
 
 @media (max-width: 330px) {
-    main section div.item-description h4:nth-of-type(1) {
+    main section .items-scroller div.item-description h4:nth-of-type(1) {
         flex: 1;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
         font-size: 5vw !important;
     }
-    main section div.item-description h4:nth-of-type(2) {
+    main section .items-scroller div.item-description h4:nth-of-type(2) {
     display: none;
     }
 }
@@ -1342,7 +1344,7 @@ main section .items-down-scroller {
     display: grid;
     gap: 9px;
     grid-auto-flow: column;
-    grid-auto-columns: 27%;
+    grid-auto-columns: 22.2%;
     padding: 0 9px 16px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -1379,24 +1381,43 @@ main section .item-cards-down div.item-description {
     background-color: var(--clr-background);
     padding: 5px;
     border-radius: 0 0 10px 10px;
+    justify-content: space-around;
 }
 
 main section .item-cards-down div.item-description h4 {
-    font-size: 24px;
+    font-size: 1.5vw;
     white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    margin: 0;
+    transition: .2s;
+}
+
+main section .item-cards-down div.item-description h5 {
+    margin: 0;
+    display: flex;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 main section .item-cards-down div.item-description h5 span.price {
-    font-size: calc(2vw + 10px);
+    font-size: calc(1.6vw + 10px);
+    color: var(--clr-black-white);
 }
 
 main section .item-cards-down div.item-description h5 span.currency {
-    font-size: 24px;
+    font-size: 1.5vw;
     padding-left: 3px;
+    color: var(--clr-black-white);
 }
 
 main section .item-cards-down div.item-description h5 span.week {
-    font-size: 24px;   
+    font-size: 1.5vw;   
 }
 
 a.item-cards-down::before {
@@ -1439,6 +1460,41 @@ a.item-cards-down::after {
 main section a.item-cards-down:active {
     box-shadow: none;
 }
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    main section .items-down-scroller {
+        grid-auto-columns: 26.9%;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    main section .items-down-scroller {
+        grid-auto-columns: 30% ;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    main section .items-down-scroller {
+        grid-auto-columns: 39.2%;
+    }
+    main section.new-sec {
+        padding: 0;
+    }
+}
+
+
+
+
+
+
 
 main div hr.down-hr {
     width: 90%;
