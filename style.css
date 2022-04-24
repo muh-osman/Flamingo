@@ -1429,12 +1429,12 @@ a.item-cards-down::before {
     bottom: 0px;
     z-index: -1;
     height: 50px;
-    width: 45%;
+    width: 33%;
     transform-origin: bottom left;
-    background: none;
-    border-radius: 10px;
-    transition: all .2s;
     transform: skew(0deg, -7deg);
+    background: none;
+    border-radius: 0 0 0 10px;
+    transition: all .2s;
 }
 
 a.item-cards-down::after {
@@ -1444,12 +1444,12 @@ a.item-cards-down::after {
     bottom: 0px;
     z-index: -1;
     height: 50px;
-    width: 45%;
+    width: 33%;
     transform-origin: bottom right;
-    background: none;
-    border-radius: 10px;
-    transition: all .2s;
     transform:skew(0deg, 7deg);
+    background: none;
+    border-radius: 0 0 10px 0;
+    transition: all .2s;
 }
 
 .item-cards-down:hover::before,
@@ -1461,6 +1461,8 @@ a.item-cards-down::after {
 .item-cards-down:active::after,
 main section a.item-cards-down:active {
     box-shadow: none;
+    transform: scale(.96);
+    transition: all .2s;
 }
 
 /* Large devices (desktops, less than 1200px) */
@@ -1490,6 +1492,23 @@ main section a.item-cards-down:active {
     }
     main section .item-cards-down div.item-description h5 span.price {
         font-size: 2.5vw;
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    main section .items-down-scroller::-webkit-scrollbar {
+        display: none;
+    }
+    main a.item-cards-down::before,
+    main a.item-cards-down::after {
+        box-shadow: 0px 13px 5px #00000040;
+        bottom: 4px;
+    }
+    main section a.item-cards-down:active {
+        box-shadow: 0px 13px 10px #00000040;
+        transform: none;
+    }
+    .item-cards-down:active::before,
+    .item-cards-down:active::after {
+        box-shadow: 0px 13px 5px #00000040;
     }
 }
 
@@ -1523,6 +1542,10 @@ main section a.item-cards-down:active {
     }
     main section .item-cards-down div.item-description h5 span.price {
         font-size: 3.5vw;
+    }
+    main a.item-cards-down::before,
+    main a.item-cards-down::after {
+        bottom: 6px;
     }
 }
 
