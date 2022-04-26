@@ -419,3 +419,21 @@ function showCatShelve() {
 mobPhoneNav.addEventListener('swiped-down', ()=> {
     mobPhoneNav.style.bottom = "-70px";
 });
+
+
+
+// Zoom out/in "How it work section" on scrolling
+const zoomOut = document.querySelector(".how-it-works-section")
+const newSec = document.querySelector('.new-sec')
+const observer = new window.IntersectionObserver(([entry]) => {
+  if (entry.isIntersecting) {
+        zoomOut.style.transform = "scale(.96) translateY(-10px)";
+      return
+    }
+        zoomOut.style.transform = "scale(1) translateY(0)";
+}, {
+  root: null,
+  threshold: 0.15, // set offset 0.1 means trigger if atleast 10% of element in viewport
+})
+
+observer.observe(newSec);

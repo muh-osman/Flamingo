@@ -912,8 +912,10 @@ main section .shelves .shelve-title a {
     font-size: calc(20.8px + 0.6vw);
 }
 
-main section .shelves .shelve-title a:hover {
+main section .shelves .shelve-title a:hover,
+main section .items-scroller .item-cards:hover div.item-description h4 {
     color: var(--clr-font-hover);
+    transition: .2s;
 }
 
 main section .items-scroller {
@@ -980,11 +982,6 @@ main section .item-cards:hover {
 main section .item-cards:active {
     box-shadow: none;
     transform: scale(.96);
-    transition: .2s;
-}
-
-main section .items-scroller .item-cards:hover div.item-description h4 {
-    color: var(--clr-font-hover);
     transition: .2s;
 }
 
@@ -1188,6 +1185,7 @@ main section .big-more-btn button:hover::before {
 main section.how-it-works-section {
     margin: 19px 12px;
     border-radius: 50px;
+    transition: .3s;
     background-image: linear-gradient(135deg,#FF0045,#7900ff);
 }
 
@@ -1327,17 +1325,19 @@ main section .shelves-down {
 }
 
 main section .shelves-down .shelve-title {
-    padding-left: 9px;
+    padding: 5px 9px;
 }
 
 main section .shelves-down .shelve-title a {
     font-weight: 500;
-    font-size: calc(20.8px + 0.6vw);
+    font-size: calc(20px + 1.5vw);
     color: var(--clr-font);
 }
 
-main section .shelves-down .shelve-title a:hover {
+main section .shelves-down .shelve-title a:hover,
+main section .items-down-scroller .item-cards-down:hover div.item-description h4 {
     color: var(--clr-font-hover);
+    transition: .2s;
 }
 
 main section .items-down-scroller {
@@ -1422,7 +1422,7 @@ main section .item-cards-down div.item-description h5 span.week {
     font-size: 1.5vw;   
 }
 
-a.item-cards-down::before {
+main a.item-cards-down::before {
     content:"";
     position: absolute;
     left: 5px;
@@ -1437,7 +1437,7 @@ a.item-cards-down::before {
     transition: all .2s;
 }
 
-a.item-cards-down::after {
+main a.item-cards-down::after {
     content:"";
     position: absolute;
     right: 5px;
@@ -1452,13 +1452,13 @@ a.item-cards-down::after {
     transition: all .2s;
 }
 
-.item-cards-down:hover::before,
-.item-cards-down:hover::after {
+main a.item-cards-down:hover::before,
+main a.item-cards-down:hover::after {
     box-shadow: 0px 13px 5px #00000040;
 }
 
-.item-cards-down:active::before,
-.item-cards-down:active::after,
+main a.item-cards-down:active::before,
+main a.item-cards-down:active::after,
 main section a.item-cards-down:active {
     box-shadow: none;
     transform: scale(.96);
@@ -1473,18 +1473,15 @@ main section a.item-cards-down:active {
     main section .item-cards-down div.item-description h4,
     main section .item-cards-down div.item-description h5 span.currency,
     main section .item-cards-down div.item-description h5 span.week {
-        font-size: 1.5vw;
+        font-size: 1.9vw;
     }
     main section .item-cards-down div.item-description h5 span.price {
-        font-size: 2vw;
+        font-size: 2.4vw;
     }
 }
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
-    main section .items-down-scroller {
-        grid-auto-columns: 30% ;
-    }
     main section .item-cards-down div.item-description h4,
     main section .item-cards-down div.item-description h5 span.currency,
     main section .item-cards-down div.item-description h5 span.week {
@@ -1497,25 +1494,31 @@ main section a.item-cards-down:active {
     main section .items-down-scroller::-webkit-scrollbar {
         display: none;
     }
+    main section a.item-cards-down:active {
+        box-shadow: 0px 3px 10px #00000040;
+        transform: scale(1);
+    }
     main a.item-cards-down::before,
     main a.item-cards-down::after {
         box-shadow: 0px 13px 5px #00000040;
         bottom: 4px;
     }
-    main section a.item-cards-down:active {
-        box-shadow: 0px 13px 10px #00000040;
-        transform: none;
-    }
-    .item-cards-down:active::before,
-    .item-cards-down:active::after {
+    main a.item-cards-down:active::before,
+    main a.item-cards-down:active::after {
         box-shadow: 0px 13px 5px #00000040;
+    }
+    main a.item-cards-down:active::before {
+        transform:skew(0deg, -7deg);
+    }
+    main a.item-cards-down:active::after {
+        transform:skew(0deg, 7deg);
     }
 }
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
     main section .items-down-scroller {
-        grid-auto-columns: 35%;
+        grid-auto-columns: 30%;
     }
     main section .item-cards-down div.item-description h4,
     main section .item-cards-down div.item-description h5 span.currency,
@@ -1530,22 +1533,22 @@ main section a.item-cards-down:active {
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     main section .items-down-scroller {
-        grid-auto-columns: 39.2%;
-    }
-    main section.new-sec {
-        padding: 0;
+        grid-auto-columns: 62%;
     }
     main section .item-cards-down div.item-description h4,
     main section .item-cards-down div.item-description h5 span.currency,
     main section .item-cards-down div.item-description h5 span.week {
-        font-size: 3vw;
+        font-size: 4vw;
     }
     main section .item-cards-down div.item-description h5 span.price {
-        font-size: 3.5vw;
+        font-size: 6.5vw;
     }
     main a.item-cards-down::before,
     main a.item-cards-down::after {
         bottom: 6px;
+    }
+    main section .shelves-down .shelve-title a {
+        font-size: calc(23px + 1.5vw);
     }
 }
 
