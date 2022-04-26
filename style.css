@@ -903,7 +903,7 @@ main section .shelve-cont {
 }
 
 main section .shelves .shelve-title {
-    padding-left: 9px;
+    padding:5px 9px 0;
 }
 
 main section .shelves .shelve-title a {
@@ -923,7 +923,7 @@ main section .items-scroller {
     gap: 9px;
     grid-auto-flow: column;
     grid-auto-columns: 21%;
-    padding: 0 9px 9px;
+    padding: 5px 9px 9px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
@@ -966,12 +966,12 @@ main section .img-of-item img {
     width: 100%;
 }
 
-main section .item-description {
-    width: 100%;
+main section.shelves-box .item-description {
     height: 25%;
     padding-top: 5px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 main section .item-cards:hover {
@@ -985,25 +985,23 @@ main section .item-cards:active {
     transition: .2s;
 }
 
-main section .items-scroller div.item-description h4:nth-of-type(1),
-main section .items-scroller div.item-description h4:nth-of-type(2) {
+main section .items-scroller div.item-description h4 {
     font-size: calc(1vw + 5px);
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 500;
     margin: 0;
     transition: .2s;
 }
 
-main section .items-scroller div.item-description h4:nth-of-type(2) {
-    flex: 2;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
 main section .items-scroller div.item-description h5 {
     margin: 0;
-    flex: 1;
     display: flex;
+    flex-grow: 0;
     justify-content: center;
     align-items: flex-end;
 }
@@ -1100,7 +1098,7 @@ main section .shelves-down:hover .items-down-scroller::-webkit-scrollbar-thumb:h
     main section .items-scroller div.item-description h4,
     main section .items-scroller h5 span.currency,
     main section .items-scroller h5 span.week {
-        font-size: 4vw !important;
+        font-size: 4.8vw !important;
     }
     main section .items-scroller h5 span.price {
         font-size: calc(4vw + 16px);
@@ -1325,7 +1323,7 @@ main section .shelves-down {
 }
 
 main section .shelves-down .shelve-title {
-    padding: 5px 9px;
+    padding: 5px 9px 0;
 }
 
 main section .shelves-down .shelve-title a {
@@ -1345,7 +1343,7 @@ main section .items-down-scroller {
     gap: 9px;
     grid-auto-flow: column;
     grid-auto-columns: 22.2%;
-    padding: 0 9px 16px;
+    padding: 5px 9px 16px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
@@ -1371,29 +1369,29 @@ main section a.item-cards-down {
     transition: all .2s;
     position: relative;
     z-index: 1;
-    padding-top: 5px;
-}
-
-main section a.item-cards-down .img-of-item {
-    padding: 0 5px;
+    padding: 5px;
 }
 
 main section .item-cards-down div.item-description {
     background-color: var(--clr-background);
-    padding: 5px;
+    padding-top: 5px;
     border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    height: 25%;
+    box-shadow: 0px 5px 0px 0px var(--clr-background), -5px 5px 0px 0px var(--clr-background), 5px 5px 0px 0px var(--clr-background);
 }
 
 main section .item-cards-down div.item-description h4 {
     font-size: 1.5vw;
+    font-weight: 500;
     white-space: normal;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: 500;
     margin: 0;
     transition: .2s;
 }
@@ -1432,7 +1430,6 @@ main a.item-cards-down::before {
     width: 33%;
     transform-origin: bottom left;
     transform: skew(0deg, -7deg);
-    background: none;
     border-radius: 0 0 0 10px;
     transition: all .2s;
 }
@@ -1447,7 +1444,6 @@ main a.item-cards-down::after {
     width: 33%;
     transform-origin: bottom right;
     transform:skew(0deg, 7deg);
-    background: none;
     border-radius: 0 0 10px 0;
     transition: all .2s;
 }
@@ -1461,7 +1457,7 @@ main a.item-cards-down:active::before,
 main a.item-cards-down:active::after,
 main section a.item-cards-down:active {
     box-shadow: none;
-    transform: scale(.96);
+    transform: scale(.94);
     transition: all .2s;
 }
 
