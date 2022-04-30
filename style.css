@@ -2211,12 +2211,23 @@ footer .copyright div a:hover {
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 660px) {
+    footer {
+        border-radius: 25px 25px 0 0;
+        padding: 25px 12px 0;
+    }
+    footer .last-hr-box {
+        margin: 12px -12px 0;
+    }
+    footer .copyright {
+        margin: 0;
+    }
     footer .lang-loc-app {
         flex-direction: column;
         height: 275px;
     }
     footer .cont-for-small-screen {
         order: 1;
+        gap: 30px;
     }
     footer .lang-loc-dad {
         order: 2;
@@ -2227,6 +2238,7 @@ footer .copyright div a:hover {
     }
     footer .soc-pay-cont-for-small-screen {
         flex-direction: column;
+        gap: 30px;
     }
     footer .app-dad {
         order: 1;
@@ -2234,6 +2246,7 @@ footer .copyright div a:hover {
     }
     footer .soc-pay-dad {
         order: 2;
+        gap: 30px;
     }
     footer .copyright div p,
     footer .copyright div a {
