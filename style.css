@@ -1930,11 +1930,11 @@ footer .cont::before {
     border-radius: 9px;
 }
 
-footer .soc-pay-cont .cont svg {
+footer .cont svg {
     margin-right: 6px;
 }
 
-footer .soc-pay-cont .cont a {
+footer .cont a {
     color: var(--clr-footer-font-table);
     font-size: 16px;
     font-weight: 500;
@@ -1945,11 +1945,11 @@ footer .soc-pay-cont .cont a {
     height: fit-content;
 }
 
-footer .soc-pay-cont .cont a:hover {
+footer .cont a:hover {
     color: var(--clr-font-hover);
 }
 
-footer .soc-pay-cont .cont a:hover svg {
+footer .cont a:hover svg {
 animation: shake .2s;
 }
 
@@ -2077,18 +2077,18 @@ footer .app-dad a {
     height: 100%;
 }
 
-footer .lang-loc-app .app-dad a svg path {
+footer .app-dad a svg path {
     transition: .3s;
     stroke: transparent;
 }
 
-footer .lang-loc-app .app-dad a:hover path.google-app-logo {
+footer .app-dad a:hover path.google-app-logo {
     fill: #000;
     stroke: #fff;
     transition: .3s;
 }
 
-footer .lang-loc-app .app-dad a:hover path.apple-app-logo {
+footer .app-dad a:hover path.apple-app-logo {
     fill: #000;
     stroke: #fff;
     transition: .3s;
@@ -2096,6 +2096,10 @@ footer .lang-loc-app .app-dad a:hover path.apple-app-logo {
 
 /* FOR small screen Box of social, payment & contact */
 footer .soc-pay-cont-for-small-screen {
+    display: none;
+}
+
+footer .cont-for-small-screen {
     display: none;
 }
 
@@ -2149,8 +2153,20 @@ footer .copyright div a:hover {
     footer .soc-pay-cont{
         display: none;
     }
+    footer .lang-loc-app .app-dad {
+        display: none;
+    }
+    footer .cont-for-small-screen {
+        display: flex;
+        gap: 25px;
+    }
     footer .soc-pay-cont-for-small-screen {
         display: flex;
+        justify-content: space-between;
+    }
+    footer .soc-pay-dad {
+        justify-content: flex-end;
+        gap: 40px;
     }
     footer .footer-dad {
         flex-wrap: wrap;
@@ -2160,13 +2176,15 @@ footer .copyright div a:hover {
     }
     footer .lang-loc-dad {
         align-items: flex-start;
+        width: auto;
     }
     footer .lang-loc-app {
         flex-direction: row;
         width: 100%;
+        height: 170px;
     }
     footer .lang-loc-app .lang-loc-dad .share {
-        width: 75%;
+        width: 380px;
     }
     footer .copyright div p,
     footer .copyright div a {
@@ -2192,8 +2210,38 @@ footer .copyright div a:hover {
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-
+@media (max-width: 660px) {
+    footer .lang-loc-app {
+        flex-direction: column;
+        height: 275px;
+    }
+    footer .cont-for-small-screen {
+        order: 1;
+    }
+    footer .lang-loc-dad {
+        order: 2;
+        width: 100%;
+    }
+    footer .lang-loc-app .lang-loc-dad .share {
+        width: 100%;
+    }
+    footer .soc-pay-cont-for-small-screen {
+        flex-direction: column;
+    }
+    footer .app-dad {
+        order: 1;
+        align-items: center;
+    }
+    footer .soc-pay-dad {
+        order: 2;
+    }
+    footer .copyright div p,
+    footer .copyright div a {
+        font-size: 14px;
+    }
+    footer .copyright {
+        justify-content: center;
+    }
 }
 
 
