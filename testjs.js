@@ -179,7 +179,8 @@ let searchInMobNav = document.querySelector('.search-in-mob-nav');
 let inputSearchIn = document.querySelector('.input-search-in');
 let searchIconNavMobLink = document.querySelector('.search-icon-nav-mob-link');
 let searchBoxMob = document.querySelector('.search-box-mob');
-let searchMobForm = document.querySelector('.search-mob-form');
+let searchMobForm = querySelector('.search-mob-form');
+
 
 searchInMobNav.addEventListener('click', pullIn);
 
@@ -222,12 +223,11 @@ function pullOutOne() {
 
 
 
-// on blur => Reshow mobile navbar & hide float search bar & reset value of float search
+// on blur => Reshow mobile navbar & hide float search bar
 inputSearchIn.addEventListener('blur', pullOutTwo);
 function pullOutTwo() {
     searchInputMobile.style.top = "-60px";
     mobPhoneNav.style.bottom = "-70px";
-    searchMobForm.reset();
 }
 
 // on blur => Reshow mobile navbar
@@ -443,16 +443,6 @@ observer.observe(newSec);
 // Add shortcut for dark mode (D)
 document.addEventListener("keydown", e => {
     if (e.key.toLowerCase() ==="d" && input !== document.activeElement && inputSearchIn !== document.activeElement) {
-        darkModeToggle.click();
+        alert("hi");
     }
 });
-
-
-// Hide Mobile navbar when scroll to bottom of page to show copyright behind him
-window.onscroll = function(ev) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        mobPhoneNav.style.bottom = "-180px";
-    } else {
-        mobPhoneNav.style.bottom = "-70px";
-    }
-};
