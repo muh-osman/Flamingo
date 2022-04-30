@@ -1822,8 +1822,10 @@ footer table th {
 
 footer table a {
     color: var(--clr-footer-font-table);
+    font-size: 16px;
     font-weight: 500;
     position: relative;
+    display: inline-block;
     transition: .2s;
 }
 
@@ -2214,6 +2216,29 @@ footer .copyright div a:hover {
     footer {
         border-radius: 25px 25px 0 0;
         padding: 25px 12px 0;
+        position: relative;
+    }
+    footer::before {
+        content: "";
+        position: absolute;
+        left: 25%;
+        top: 10px;
+        width: 50%;
+        height: 5px;
+        border-radius: 50px;
+        background-color: var(--clr-background);
+    }
+    footer table {
+        text-align: center;
+    }
+    footer table span {
+        display: none;
+    }
+    footer table th {
+        font-size: 16px;
+    }
+    footer table a {
+        font-size: 13px;
     }
     footer .last-hr-box {
         margin: 12px -12px 0;
@@ -2256,14 +2281,6 @@ footer .copyright div a:hover {
         justify-content: center;
     }
 }
-
-
-
-
-
-
-
-
 
 /* Mobile Navbar */
 nav.mob-phone-nav {
