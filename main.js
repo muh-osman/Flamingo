@@ -436,23 +436,69 @@ const observer = new window.IntersectionObserver(([entry]) => {
   root: null,
   threshold: 0.15, // set offset 0.1 means trigger if atleast 10% of element in viewport
 })
-
 observer.observe(newSec);
 
 
-// Add shortcut for dark mode (D)
+// Add shortcut for website
 document.addEventListener("keydown", e => {
-    if (e.key.toLowerCase() ==="d" && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+    //  Dark mode ==> (D or ي)
+    if ((e.key.toLowerCase() ==="d" || e.key ==="ي") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
         darkModeToggle.click();
+    }
+    // Search ==> (S or س)
+    else if ((e.key.toLowerCase() ==="s"|| e.key ==="س") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        input.focus();
+        e.preventDefault();
+    }
+    // Home ==> (h or ا)
+    else if ((e.key.toLowerCase() ==="h" || e.key ==="ا") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#home').click();
+    }
+    // Phone ==> (p or ح)
+    else if ((e.key.toLowerCase() ==="p" || e.key ==="ح") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#phone').click();
+    }
+    // Computer ==> (c or ؤ)
+    else if ((e.key.toLowerCase() ==="c" || e.key ==="ؤ") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#computer').click();
+    }
+    // Watches ==> (w or ص)
+    else if ((e.key.toLowerCase() ==="w" || e.key ==="ص") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#watch').click();
+    }
+    // Camera ==> (k or ن)
+    else if ((e.key.toLowerCase() ==="k" || e.key ==="ن") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#camera').click();
+    }
+    // Gaming ==> (g or ل)
+    else if ((e.key.toLowerCase() ==="g" || e.key ==="ل") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#gaming').click();
+    }
+    // Tablets ==> (t or ف)
+    else if ((e.key.toLowerCase() ==="t" || e.key ==="ف") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#tablet').click();
+    }
+    // Tv's ==> (v or ر)
+    else if ((e.key.toLowerCase() ==="v" || e.key ==="ر") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#tv').click();
+    }
+    // Rent ==> (r or ق)
+    else if ((e.key.toLowerCase() ==="r" || e.key ==="ق") && input !== document.activeElement && inputSearchIn !== document.activeElement) {
+        document.querySelector('#rent').click();
     }
 });
 
 
 // Hide Mobile navbar when scroll to bottom of page to show copyright behind him
-window.onscroll = function(ev) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+const footer = document.querySelector("footer")
+const observertwo = new window.IntersectionObserver(([entry]) => {
+  if (entry.isIntersecting) {
         mobPhoneNav.style.bottom = "-180px";
-    } else {
-        mobPhoneNav.style.bottom = "-70px";
+      return
     }
-};
+        mobPhoneNav.style.bottom = "-70px";
+}, {
+  root: null,
+  threshold: 0.6, // set offset 0.1 means trigger if atleast 10% of element in viewport
+})
+observertwo.observe(footer);

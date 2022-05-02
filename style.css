@@ -1135,20 +1135,20 @@ main section .shelves-down:hover .items-down-scroller::-webkit-scrollbar-thumb:h
         margin: 19px 0 !important;
     }
     main section.new-sec {
-        padding: 0;
+        padding-right: 0 !important;
+    }
+    main section .shelves-down {
+        border-radius: 10px 0 0 10px !important;
     }
 }
 
 @media (max-width: 330px) {
-    main section .items-scroller div.item-description h4:nth-of-type(1) {
+    main section .items-scroller div.item-description h4 {
         flex: 1;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
         font-size: 5vw !important;
-    }
-    main section .items-scroller div.item-description h4:nth-of-type(2) {
-    display: none;
     }
 }
 
