@@ -502,3 +502,20 @@ const observertwo = new window.IntersectionObserver(([entry]) => {
   threshold: 0.6, // set offset 0.1 means trigger if atleast 10% of element in viewport
 })
 observertwo.observe(footer);
+
+
+
+// Focus on shelves scroller on hover to allow scroll by keyboard arrows
+const focusOnScroller = document.querySelectorAll('.items-scroller, .items-down-scroller');
+
+const hoverHandler = (e) => {
+  e.preventDefault();
+  setTimeout(() => {
+    e.target.focus();
+  }, 0);
+};
+
+for (var i = 0; i < focusOnScroller.length; i++) {
+    focusOnScroller[i].addEventListener('mouseenter', hoverHandler);
+}
+

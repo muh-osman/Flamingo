@@ -933,6 +933,7 @@ main section .items-scroller {
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 9px;
     height: 100%;
+    outline: none;
 }
 
 main section .items-scroller > * {
@@ -1353,6 +1354,7 @@ main section .items-down-scroller {
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 9px;
     height: 100%;
+    outline: none;
 }
 
 main section .items-down-scroller > * {
