@@ -518,4 +518,3 @@ const hoverHandler = (e) => {
 for (var i = 0; i < focusOnScroller.length; i++) {
     focusOnScroller[i].addEventListener('mouseenter', hoverHandler);
 }
-
