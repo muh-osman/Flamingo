@@ -42,7 +42,6 @@ Text Domain: This theme, like SS, is licensed under the GPL.
     --clr-background-rent-btn: #fff;
     --clr-rent-btn-hover: #fff;
     --clr-background-rent-btn-hover: transparent;
-    --clr-border-rent-btn-hover: transparent;
     --clr-border-rent-btn-hover: #fff;
     --clr-rent-btn-icon: #fff;
     --clr-rent-btn-icon-hover: #000;
@@ -344,12 +343,12 @@ header .btn-box label.slider {
 	display: block;
 	border-radius: 45px;
 	position: relative;
-	transition: 0.4s;
+	transition: .4s;
 }
 
 header label.slider:hover {
 	background: #000;
-	transition: 0.4s;
+	transition: .4s;
 }
 
 header label.slider::before {
@@ -362,7 +361,7 @@ header label.slider::before {
     background: url('images/logos/moon_logo.svg') no-repeat center;
 	background-size: 30px;
 	border-radius: 25px;
-	transition: 0.4s;
+	transition: .4s;
 }
 
 header input.dark:checked:hover + label.slider {
@@ -374,7 +373,7 @@ header input.dark:checked + label.slider::before {
     background: url('images/logos/sun_logo.svg') no-repeat center;
 	background-size: 37px;
 	border-radius: 25px;
-	transition: 0.4s;	
+	transition: .4s;	
 }
 
 header input.dark:checked + label.slider:hover::before,
@@ -408,14 +407,15 @@ header .btn-box  a.log-in{
     border-radius: 50px;
     color: var(--clr-login-font);
     background-color: var(--clr-login-background);
-    transition: 0.2s;;
-
+    transition:all .2s;
 }
 
 header a.log-in:hover {
     color: var(--clr-login-font-hover);
     background-color: var(--clr-login-background-hover);
+    border: 0.5px solid rgba(0, 0, 0, 0.13);
     box-shadow: rgba(0, 0, 0, 0.13) 0px 7px 15px, rgb(0 0 0 / 5%) 0px 0px 3px;
+    transition: .2s;
 }
 
 header a.log-in:active {
@@ -440,13 +440,15 @@ header div.sign-up-box a.sign-up {
     border-radius: 50px;
     color: var(--clr-signup-font);
     background-color: var(--clr-signup-background);
-    transition: 0.3s;
+    transition:all .3s;
 }
 
 header .sign-up-box a.sign-up:hover {
     color: #000;
     background-color: #fff;
+    border: 0.5px solid rgba(0, 0, 0, 0.13);
     box-shadow: rgba(0, 0, 0, 0.13) 0px 7px 15px, rgb(0 0 0 / 5%) 0px 0px 3px;
+    transition:all .3s;
 }
 
 header .sign-up-box a.sign-up:active {
@@ -1711,6 +1713,7 @@ main div hr.down-hr {
     background-color: var(--clr-down-hr);
     opacity: 1;
     border-radius: 50px;
+    border: 0;
 }
 
 
@@ -1797,6 +1800,15 @@ main a.nintendo:hover::before {
     height: 0;
 }
 
+main a.uniform:hover svg {
+    scale: .8;
+    transition:all .4s;
+
+}
+main a.uniform svg {
+    transition:all .4s;
+}
+
 /* Samsung & Nintendo */
 
 main a.samsung svg .galaxy,
@@ -1859,6 +1871,7 @@ main a.nintendo:hover.nintendo path {
         width: 152px;
         border-radius: 0 50px 50px 0;
         position: relative;
+        overflow: visible;
     }
 
     hr.down-hr::before {
