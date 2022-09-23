@@ -79,6 +79,13 @@ darkModeToggle.addEventListener('change', () => {
 
 
 
+// Hide Dot Up Notification Bill
+function dotFunction() {
+    document.querySelector(".notifi-dot").style.display = "none";
+}
+
+
+
 // Carousel Indicator
 const myCarousel = document.getElementById("carouselExampleIndicators");
 const carouselIndicators = myCarousel.querySelectorAll(
